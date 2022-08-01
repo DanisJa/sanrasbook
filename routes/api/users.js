@@ -3,7 +3,6 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
-
 const User = require('../../models/User');
 
 // @route 		  	POST api/users
@@ -30,7 +29,6 @@ router.post(
 		try {
 			//Check if user exists
 			let user = await User.findOne({ email });
-
 			if (user) {
 				return res
 					.status(400)
@@ -44,6 +42,7 @@ router.post(
 				d: 'mm',
 			});
 
+			//Creating User object (registering an account)
 			user = new User({
 				name,
 				email,
@@ -59,7 +58,9 @@ router.post(
 			await user.save();
 
 			//return the JSONWebToken
-			res.send('User registered');
+			//TODO here
+
+			res.send('User registered'); //logging success
 		} catch (err) {
 			console.error(err.message);
 			res.status(500).send('Server error');

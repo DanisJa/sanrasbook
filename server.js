@@ -9,6 +9,7 @@ connectDB();
 //Initialize middleware
 app.use(express.json({ extended: false }));
 
+//sample request
 app.get('/', (req, res) => res.send('Hello from something.js'));
 
 //Define routes (.use(HTTP path for requests, relative path to route))

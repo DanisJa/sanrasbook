@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
+const config = require('config');
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
+const jwt = require('jsonwebtoken');
 
 // @route 		  	POST api/users
 // @desc		    Register user
@@ -58,9 +60,21 @@ router.post(
 			await user.save();
 
 			//return the JSONWebToken
-			//TODO here
+			const payload = {
+				user: {
+					id: user.id, //mongoose uses .id instead of ._id from docs
+				},
+			};
 
-			res.send('User registered'); //logging success
+			jwt.sign(
+				payload,
+				config.get('jwtSecret'),
+				{ expiresIn: 360000 },
+				(err, token) => {
+					if (err) throw err;
+					res.json({ token });
+				}
+			);
 		} catch (err) {
 			console.error(err.message);
 			res.status(500).send('Server error');

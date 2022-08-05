@@ -7,7 +7,7 @@ const app = express();
 connectDB();
 
 //Initialize middleware
-app.use(express.json({ extended: false }));
+app.use(express.json());
 
 //sample request
 app.get('/', (req, res) => res.send('Hello from something.js'));

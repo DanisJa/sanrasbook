@@ -18,22 +18,6 @@ const Login = () => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		console.log('SUCCESS');
-		// const newUser = {
-		// 	name,
-		// 	email,
-		// 	password,
-		// };
-
-		// try {
-		// 	const config = {
-		// 		'Content-Type': 'application/json',
-		// 	};
-
-		// 	const res = await axios.post('api/users', newUser, config);
-		// 	console.log(res.data);
-		// } catch (err) {
-		// 	console.log(err.response.data);
-		// }
 	};
 
 	return (

@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
+import { registerUser } from '../../actions/auth';
 import PropTypes from 'prop-types';
 // import axios from 'axios';
 
-const Register = ({ setAlert }) => {
+const Register = ({ setAlert, registerUser }) => {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -25,7 +26,7 @@ const Register = ({ setAlert }) => {
 		if (password !== password2) {
 			setAlert('Passwords do not match', 'danger', 2000);
 		} else {
-			console.log('SUCCESS');
+			registerUser({ name, email, password });
 			// const newUser = {
 			// 	name,
 			// 	email,
@@ -59,7 +60,6 @@ const Register = ({ setAlert }) => {
 						name='name'
 						value={name}
 						onChange={(e) => onChange(e)}
-						required
 					/>
 				</div>
 				<div className='form-group'>
@@ -80,7 +80,6 @@ const Register = ({ setAlert }) => {
 						type='password'
 						placeholder='Password'
 						name='password'
-						minLength='6'
 						value={password}
 						onChange={(e) => onChange(e)}
 					/>
@@ -90,7 +89,6 @@ const Register = ({ setAlert }) => {
 						type='password'
 						placeholder='Confirm Password'
 						name='password2'
-						minLength='6'
 						value={password2}
 						onChange={(e) => onChange(e)}
 					/>
@@ -106,6 +104,7 @@ const Register = ({ setAlert }) => {
 
 Register.propTypes = {
 	setAlert: PropTypes.func.isRequired,
+	registerUser: PropTypes.func.isRequired,
 };
 
-export default connect(null, { setAlert })(Register);
+export default connect(null, { setAlert, registerUser })(Register);

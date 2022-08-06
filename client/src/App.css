@@ -1,10 +1,53 @@
+/* Animations */
+@-webkit-keyframes slide-in-blurred-tr {
+  0% {
+    -webkit-transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+            transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0) skew(0deg, 0deg);
+            transform: translate(0, 0) skew(0deg, 0deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-tr {
+  0% {
+    -webkit-transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+            transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0) skew(0deg, 0deg);
+            transform: translate(0, 0) skew(0deg, 0deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
 /* Global Styles */
 :root {
-  --primary-color: #00ADB5;
-  --dark-color: #222831;
-  --light-color: #018a93;
-  --danger-color: #96202c;
-  --success-color: #217e36;
+  --primary-color: #603601;
+  --dark-color: #1C0A00;
+  --light-color: #CC9544;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
 }
 
 * {
@@ -133,7 +176,6 @@ img {
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
@@ -155,6 +197,11 @@ img {
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+  transition: transform .3s;
+}
+
+.alert:hover{
+  transform: scale(1.1);
 }
 
 .btn-primary,
@@ -170,7 +217,7 @@ img {
 .badge-light,
 .alert-light {
   background: var(--light-color);
-  color: #fff;
+  color: #333;
 }
 
 .btn-dark,
@@ -185,6 +232,8 @@ img {
 .bg-danger,
 .badge-danger,
 .alert-danger {
+  -webkit-animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   background: var(--danger-color);
   color: #fff;
 }
@@ -253,7 +302,7 @@ img {
 .form select,
 .form textarea {
   display: block;
-  width: 70%;
+  width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
@@ -296,7 +345,7 @@ button {
 }
 
 .table th {
-  background: var(--primary-color);
+  background: var(--light-color);
 }
 
 /* Navbar */
@@ -575,4 +624,11 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+}
+
+.alert-wrapper {
+  position: fixed;
+  top: 4rem;
+  right: 2rem;
+  display: inline-block;
 }

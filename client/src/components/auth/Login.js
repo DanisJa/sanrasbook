@@ -17,27 +17,27 @@ const Login = () => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		console.log('SUCCESS')
-			// const newUser = {
-			// 	name,
-			// 	email,
-			// 	password,
-			// };
+		console.log('SUCCESS');
+		// const newUser = {
+		// 	name,
+		// 	email,
+		// 	password,
+		// };
 
-			// try {
-			// 	const config = {
-			// 		'Content-Type': 'application/json',
-			// 	};
+		// try {
+		// 	const config = {
+		// 		'Content-Type': 'application/json',
+		// 	};
 
-			// 	const res = await axios.post('api/users', newUser, config);
-			// 	console.log(res.data);
-			// } catch (err) {
-			// 	console.log(err.response.data);
-			// }
-		}
+		// 	const res = await axios.post('api/users', newUser, config);
+		// 	console.log(res.data);
+		// } catch (err) {
+		// 	console.log(err.response.data);
+		// }
+	};
 
 	return (
-		<>
+		<section className='container'>
 			<h1 className='large text-primary'>Sign In</h1>
 			<p className='lead'>
 				<i className='fas fa-user'></i> Log In
@@ -65,9 +65,9 @@ const Login = () => {
 				<input type='submit' className='btn btn-primary' value='Log in' />
 			</form>
 			<p className='my-1'>
-				Don't have an account? <Link to="/register">Register here</Link>
+				Don't have an account? <Link to='/register'>Register here</Link>
 			</p>
-		</>
+		</section>
 	);
 };
 

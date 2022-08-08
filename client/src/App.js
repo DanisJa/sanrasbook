@@ -13,6 +13,7 @@ import PrivateRoute from './components/routing/PrivateRoute';
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
+import ProfileForm from './components/profile-form/ProfileForm';
 
 if (localStorage.token) {
 	setAuthToken(localStorage.token);
@@ -35,6 +36,14 @@ const App = () => {
 					<Route
 						path='dashboard'
 						element={<PrivateRoute component={Dashboard} />}
+					/>
+					<Route
+						path='create-profile'
+						element={<PrivateRoute component={ProfileForm} />}
+					/>
+					<Route
+						path='edit-profile'
+						element={<PrivateRoute component={ProfileForm} />}
 					/>
 				</Routes>
 			</Router>

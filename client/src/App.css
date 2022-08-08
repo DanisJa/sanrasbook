@@ -69,6 +69,8 @@ a {
 }
 
 ul {
+  align-items: center; /* This and line below might introduce some breaking stylization */
+  justify-content: center;
   list-style: none;
 }
 
@@ -193,7 +195,8 @@ img {
 
 .alert {
   padding: 0.8rem;
-  margin: 1rem 0;
+  margin-top: 0.5rem;
+  width: 25rem;
   opacity: 0.9;
   border-radius: 10px;
   background: var(--light-color);
@@ -239,6 +242,8 @@ img {
 .bg-success,
 .badge-success,
 .alert-success {
+  -webkit-animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   background: var(--success-color);
   color: #fff;
 }
@@ -247,6 +252,8 @@ img {
 .bg-white,
 .badge-white,
 .alert-white {
+  -webkit-animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
@@ -556,7 +563,8 @@ button {
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
+
   .container {
     margin-top: 8rem;
   }
@@ -630,8 +638,8 @@ button {
 
   .dash-buttons a {
     display: block;
-    width: 100%;
-    margin-bottom: 0.2rem;
+    width: 40%;
+    margin: 0.5rem;
   }
 
   .post {
@@ -646,6 +654,7 @@ button {
 .alert-wrapper {
   width: 40%;
   height: 40%;
+  margin-top: 1rem;
   font-size: 0.9rem;
   position: fixed;
   top: 5.5rem;

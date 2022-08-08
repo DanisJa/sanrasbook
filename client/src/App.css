@@ -40,12 +40,11 @@
   }
 }
 
-
 /* Global Styles */
 :root {
-  --primary-color: #603601;
-  --dark-color: #1C0A00;
-  --light-color: #CC9544;
+  --primary-color: #F55353;
+  --dark-color: #2b121a;
+  --light-color: #FEB139;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -202,10 +201,6 @@ img {
   transition: transform .3s;
 }
 
-.alert:hover{
-  transform: scale(1.1);
-}
-
 .btn-primary,
 .bg-primary,
 .badge-primary,
@@ -218,8 +213,8 @@ img {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
-  color: #333;
+  background: var(--primary-color);
+  color: #fff;
 }
 
 .btn-dark,
@@ -278,7 +273,7 @@ img {
 
 /* Overlay */
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.);
   position: absolute;
   top: 0;
   left: 0;
@@ -368,14 +363,21 @@ button {
   display: flex;
 }
 
-.navbar a {
+.navbar a, .log-out-btn {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
+  transition: color 0.3s, font-size 0.3s;
 }
 
-.navbar a:hover {
-  color: var(--primary-color);
+.navbar a:hover, .log-out-btn {
+  font-size: 1.1rem;
+  color: var(--light-color);
+}
+
+.navbar .main-link:hover{
+  color: var(--light-color);
+  font-size: 1.6rem;
 }
 
 .navbar .welcome span {
@@ -385,7 +387,20 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('./img/showcase.jpg') no-repeat center center/cover;
+  background-image: linear-gradient(
+  0deg,
+  hsl(0deg 100% 49%) 0%,
+  hsl(16deg 96% 61%) 0%,
+  hsl(32deg 97% 73%) 0%,
+  hsl(48deg 99% 86%) 2%,
+  hsl(48deg 100% 82%) 5%,
+  hsl(42deg 100% 70%) 17%,
+  hsl(35deg 100% 58%) 77%,
+  hsl(24deg 95% 48%) 87%,
+  hsl(5deg 82% 40%) 93%,
+  hsl(346deg 71% 31%) 97%,
+  hsl(327deg 61% 20%) 100%
+  );
   height: 100vh;
 }
 
@@ -629,8 +644,11 @@ button {
 }
 
 .alert-wrapper {
+  width: 40%;
+  height: 40%;
+  font-size: 0.9rem;
   position: fixed;
-  top: 4rem;
+  top: 5.5rem;
   right: 2rem;
   display: inline-block;
 }

@@ -42,7 +42,7 @@ router.post(
 			let user = await User.findOne({ email });
 			if (!user) {
 				return res.status(400).json({
-					errors: [{ msg: 'Invalid credentials (user does not exist)' }],
+					errors: [{ msg: 'Invalid credentials' }],
 				});
 			}
 
@@ -50,7 +50,7 @@ router.post(
 
 			if (!isMatch) {
 				return res.status(400).json({
-					errors: [{ msg: 'Invalid credentials (really invalid)' }],
+					errors: [{ msg: 'Wrong password' }],
 				});
 			}
 
@@ -64,7 +64,7 @@ router.post(
 			jwt.sign(
 				payload,
 				config.get('jwtSecret'),
-				{ expiresIn: 360000 },
+				{ expiresIn: 3600 },
 				(err, token) => {
 					if (err) throw err;
 					res.json({ token });

@@ -36,8 +36,7 @@ const ProfileForm = ({
 		// if there is no profile, attempt to fetch one
 		if (!profile) getCurrentProfile();
 
-		// if we finished loading and we do have a profile
-		// then build our profileData
+		// build profile data if profile is loaded
 		if (!loading && profile) {
 			const profileData = { ...initialState };
 			for (const key in profile) {
@@ -74,6 +73,7 @@ const ProfileForm = ({
 
 	const onSubmit = (e) => {
 		e.preventDefault();
+
 		createProfile(formData, navigate, profile ? true : false);
 	};
 
@@ -97,7 +97,7 @@ const ProfileForm = ({
 						<option value='Junior Developer'>Junior Developer</option>
 						<option value='Senior Developer'>Senior Developer</option>
 						<option value='Manager'>Manager</option>
-						<option value='Student or Learning'>Student or Learning</option>
+						<option value='Student'>Student or Learning</option>
 						<option value='Instructor'>Instructor or Teacher</option>
 						<option value='Intern'>Intern</option>
 						<option value='Other'>Other</option>

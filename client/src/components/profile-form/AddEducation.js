@@ -44,7 +44,6 @@ const AddEducation = ({ addEducation }) => {
 						name='school'
 						value={school}
 						onChange={onChange}
-						required
 					/>
 				</div>
 				<div className='form-group'>
@@ -54,13 +53,12 @@ const AddEducation = ({ addEducation }) => {
 						name='degree'
 						value={degree}
 						onChange={onChange}
-						required
 					/>
 				</div>
 				<div className='form-group'>
 					<input
 						type='text'
-						placeholder='Field of Study'
+						placeholder='* Field of Study'
 						name='fieldofstudy'
 						value={fieldofstudy}
 						onChange={onChange}

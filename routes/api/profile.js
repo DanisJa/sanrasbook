@@ -4,6 +4,7 @@ const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
 const request = require('request');
 const config = require('config');
 
@@ -158,8 +159,8 @@ router.get('/user/:user_id', async (req, res) => {
 // @access		  Public
 router.delete('/', auth, async (req, res) => {
 	try {
-		//@todo Remove users posts...
-
+		// Remove user posts
+		await Post.deleteMany({ user: req.user.id });
 		//Remove profile
 		await Profile.findOneAndRemove({ user: req.user.id });
 		//Remove user
@@ -252,7 +253,7 @@ router.put(
 		auth,
 		[
 			check('school', 'School is required').not().isEmpty(),
-			check('degree', 'degree is required').not().isEmpty(),
+			check('degree', 'Degree is required').not().isEmpty(),
 			check('from', 'From date is required').not().isEmpty(),
 			check('fieldofstudy', 'Field of study is required').not().isEmpty(),
 		],

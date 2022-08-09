@@ -42,8 +42,8 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #F55353;
-  --dark-color: #2b121a;
+  --primary-color: #a93838;
+  --dark-color: #670007;
   --light-color: #FEB139;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -56,7 +56,7 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'SF Mono', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -106,12 +106,17 @@ img {
   margin-bottom: 1rem;
 }
 
+
 .text-center {
   text-align: center;
 }
 
 .text-primary {
-  color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.text-skills{
+  color: white;
 }
 
 .text-dark {
@@ -173,7 +178,7 @@ img {
 .btn {
   display: inline-block;
   background: var(--light-color);
-  color: #333;
+  color: rgb(255, 255, 255);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -232,18 +237,21 @@ img {
 .bg-danger,
 .badge-danger,
 .alert-danger {
-  -webkit-animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   background: var(--danger-color);
   color: #fff;
+}
+
+.alert-danger, 
+.alert-success,
+.alert-white{
+-webkit-animation: slide-in-blurred-tr 0.4s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+animation: slide-in-blurred-tr 0.4s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 .btn-success,
 .bg-success,
 .badge-success,
 .alert-success {
-  -webkit-animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   background: var(--success-color);
   color: #fff;
 }
@@ -252,8 +260,6 @@ img {
 .bg-white,
 .badge-white,
 .alert-white {
-  -webkit-animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  animation: slide-in-blurred-tr 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
@@ -305,11 +311,11 @@ img {
 .form input[type='date'],
 .form select,
 .form textarea {
+  border-radius: 10px;
   display: block;
-  width: 100%;
+  width: 60%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
 }
 
 .form input[type='submit'],
@@ -344,12 +350,29 @@ button {
 
 .table th,
 .table td {
-  padding: 1rem;
-  text-align: left;
+  padding: 0.9rem;
+  text-align: center;
+  background-color: #b3b3b3;
+}
+
+.table td{
+font-size: 1rem;
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.37);
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .table th {
-  background: var(--light-color);
+background: rgba(254, 177, 57, 0.75);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 10px 10px 0px 0px;
 }
 
 /* Navbar */
@@ -432,6 +455,7 @@ button {
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  border-radius: 20px;
 }
 
 /* Profile Page */
@@ -481,22 +505,27 @@ button {
 
 .profile-exp {
   grid-area: exp;
+  margin: 1rem;
+  padding: -1rem;
 }
 
 .profile-edu {
   grid-area: edu;
+  margin: 1rem;
+  padding: -1rem;
 }
 
 .profile-exp h2,
 .profile-edu h2 {
   margin-bottom: 1rem;
+  border-bottom: 8px solid var(--dark-color);
 }
 
 .profile-exp > div,
 .profile-edu > div {
   margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: #ccc 1px dotted;
+  border-bottom: 3px solid var(--dark-color);
+  padding: 1rem;
 }
 
 .profile-exp > div:last-child,
@@ -525,6 +554,20 @@ button {
 .profile-github > div:last-child {
   flex: 3;
   flex-basis: 20%;
+}
+
+.profile-about,
+.profile-top,
+.profile-github,
+.profile-edu,
+.profile-exp{
+  border-radius: 2.5rem;
+}
+
+.edu-exp-combinator{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /* Posts Page */
@@ -606,6 +649,11 @@ button {
   }
 
   /* Profiles Page */
+  .edu-exp-combinator{
+  display:flex;
+  flex-direction: column;
+}
+
   .profile {
     grid-template-columns: 1fr;
     text-align: center;
@@ -653,7 +701,7 @@ button {
 
 .alert-wrapper {
   width: 40%;
-  height: 40%;
+  height: 0%;
   margin-top: 1rem;
   font-size: 0.9rem;
   position: fixed;

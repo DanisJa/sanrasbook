@@ -12,7 +12,7 @@ const Education = ({ education, deleteEducation }) => {
 			<td className='hide-sm'>
 				<Moment format='YYYY/MM/DD'>{edu.from}</Moment>
 				<br />
-				<i class='fa-solid fa-arrow-down'></i>
+				<i className='fa-solid fa-arrow-down'></i>
 				<br />
 				{edu.to === null ? (
 					' Now'

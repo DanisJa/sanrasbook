@@ -700,13 +700,23 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: 40%;
     margin: 0.5rem;
   }
-
   .post {
     grid-template-columns: 1fr;
   }
+
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
+  }
+
+  .post-comment{
+    display: flex;
+    flex-direction: row;
+    background:rgba(179, 178, 178, 0.37)
+  }
+  .post-comment a,
+  .post-comment button{
+    /* padding: 0; */
   }
 }
 

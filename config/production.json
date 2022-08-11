@@ -1,0 +1,6 @@
+{
+	"mongoURI": "mongodb+srv://DanisJa:Vraxo1309@devconn.h74kzux.mongodb.net/?retryWrites=true&w=majority",
+	"jwtSecret": "secretToken",
+	"githubClientId": "45b3a1b08865f24c6e7b",
+	"githubSecret": "3e2a50501d88d02651c99041a3773e7692ce6798"
+}

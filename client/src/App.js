@@ -16,6 +16,8 @@ import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
+import NotFound from './components/layout/NotFound';
+import { Redirect } from 'react-router-dom';
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -63,6 +65,14 @@ const App = () => {
 					/>
 					<Route path='posts' element={<PrivateRoute component={Posts} />} />
 					<Route path='posts/:id' element={<PrivateRoute component={Post} />} />
+					<Route
+						path='*'
+						element={
+							<section className='container'>
+								<NotFound />
+							</section>
+						}
+					/>
 				</Routes>
 			</Router>
 		</Provider>

@@ -103,7 +103,7 @@ const ProfileForm = ({
 						<option value='Other'>Other</option>
 					</select>
 					<small className='form-text'>
-						Give us an idea of where you are at in your career
+						Select your current professional status
 					</small>
 				</div>
 				<div className='form-group'>
@@ -114,9 +114,7 @@ const ProfileForm = ({
 						value={company}
 						onChange={onChange}
 					/>
-					<small className='form-text'>
-						Could be your own company or one you work for
-					</small>
+					<small className='form-text'>Can be your own as well</small>
 				</div>
 				<div className='form-group'>
 					<input
@@ -127,7 +125,7 @@ const ProfileForm = ({
 						onChange={onChange}
 					/>
 					<small className='form-text'>
-						Could be your own or a company website
+						Leave blank if none, company is ok too
 					</small>
 				</div>
 				<div className='form-group'>
@@ -138,9 +136,7 @@ const ProfileForm = ({
 						value={location}
 						onChange={onChange}
 					/>
-					<small className='form-text'>
-						City & state suggested (eg. Boston, MA)
-					</small>
+					<small className='form-text'>City, Country (eg. Madrid, Spain)</small>
 				</div>
 				<div className='form-group'>
 					<input
@@ -163,8 +159,7 @@ const ProfileForm = ({
 						onChange={onChange}
 					/>
 					<small className='form-text'>
-						If you want your latest repos and a Github link, include your
-						username
+						Your repos will be shown on profile
 					</small>
 				</div>
 				<div className='form-group'>
@@ -174,7 +169,9 @@ const ProfileForm = ({
 						value={bio}
 						onChange={onChange}
 					/>
-					<small className='form-text'>Tell us a little about yourself</small>
+					<small className='form-text'>
+						Let others know something about yourself...
+					</small>
 				</div>
 
 				<div className='my-2'>

@@ -14,10 +14,7 @@ const Landing = ({ isAuthenticated }) => {
 			<div className='dark-overlay'>
 				<div className='landing-inner'>
 					<h1 className='x-large'>SanrasBook</h1>
-					<p className='lead'>
-						Create a profile/portfolio, share posts and get help from other
-						people
-					</p>
+					<p className='lead'>Welcome to SanrasBook.</p>
 					<div className='buttons'>
 						<Link to='/register' className='btn btn-primary'>
 							Sign Up

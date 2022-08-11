@@ -16,7 +16,7 @@ export const Navbar = ({ auth: { loading, isAuthenticated }, logout }) => {
 			<li>
 				<Link to='/posts'>
 					<i className='fa-solid fa-comment'></i>
-					<span className='hide-sm'> Posts</span>
+					<span className='hide-sm'> Feed</span>
 				</Link>
 			</li>
 			<li>

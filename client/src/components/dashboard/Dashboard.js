@@ -25,9 +25,9 @@ const Dashboard = ({
 				<Spinner />
 			) : (
 				<>
-					<h1 className='large text-primary'>Dashboard</h1>
+					<h1 className='large text-primary'>Profile</h1>
 					<p className='lead'>
-						<i className='fas fa-user'></i> Welcome {user && user.name}
+						<i className='fas fa-user'></i> Hello, {user && user.name}!
 					</p>
 					{profile !== null ? (
 						<>
@@ -40,13 +40,13 @@ const Dashboard = ({
 									className='btn btn-danger'
 									onClick={() => deleteAccount()}
 								>
-									<i className='fa-solid fa-ban'></i> Delete my account
+									<i className='fa-solid fa-ban'></i> Delete Account
 								</button>
 							</div>
 						</>
 					) : (
 						<>
-							<p>You have not yet set up a profile, please add some info</p>
+							<p>You don't have a profile. Create below.</p>
 							<Link to='/create-profile' className='btn btn-primary my-1'>
 								Create Profile
 							</Link>

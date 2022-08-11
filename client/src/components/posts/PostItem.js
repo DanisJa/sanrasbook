@@ -8,6 +8,7 @@ import { addLike, removeLike, deletePost } from '../../actions/post';
 const PostItem = ({
 	addLike,
 	removeLike,
+	deletePost,
 	auth,
 	post: { _id, text, name, avatar, user, likes, comments, date },
 }) => {
@@ -47,7 +48,7 @@ const PostItem = ({
 				</Link>
 				{!auth.loading && user === auth.user._id && (
 					<button
-						onClick={deletePost(_id)}
+						onClick={() => deletePost(_id)}
 						type='button'
 						className='btn btn-danger'
 					>

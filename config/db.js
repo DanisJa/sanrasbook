@@ -6,7 +6,7 @@ const db = config.get('mongoURI');
 const connectDB = async () => {
 	try {
 		await mongoose.connect(db);
-		console.log('MongoDB connected');
+		console.log('MongoDB connected (db.js)');
 	} catch (err) {
 		console.error(err);
 		//exit process (failure)

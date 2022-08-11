@@ -3,6 +3,7 @@ import {
 	POST_ERROR,
 	UPDATE_LIKES,
 	DELETE_POST,
+	ADD_POST,
 } from '../actions/types';
 
 const initialState = {
@@ -20,6 +21,13 @@ const post = (state = initialState, action) => {
 			return {
 				...state,
 				posts: payload,
+				loading: false,
+			};
+		case ADD_POST:
+			state.posts = [payload, ...state.posts];
+			return {
+				...state,
+				posts: state.posts,
 				loading: false,
 			};
 		case DELETE_POST:
